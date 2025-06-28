@@ -1,0 +1,154 @@
+/* Landing Page CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.main-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #8d8fbb, #2a2c6b);
+}
+.login-container {
+    position: relative;
+    width: 850px;
+    height: 550px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    display: flex;
+}
+.login-form-box {
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-align: center;
+    padding: 40px;
+    z-index: 1;
+}
+
+form {
+    width: 100%;
+}
+
+.login-form-box h1 {
+    font-size: 36px;
+    margin: -10px 0 20px 0;
+}
+
+.input-group {
+    position: relative;
+    margin: 30px 0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 13px 50px 13px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #eee;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.input-group input::placeholder {
+    color: #888;
+    font-weight: 400;
+}
+
+.login-btn {
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(360deg, #3f3f61, #060730);
+    opacity: 0.9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+}
+
+.welcome-panel {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 2;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #2a2c6b, #8d8fbb);
+}
+
+.welcome-panel h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 0;
+}
+
+
+@media (max-width: 600px) {
+    .login-container {
+        flex-direction: column;
+        width: 75vw;
+        height: 80vh;
+        min-height: 90vh;
+        border-radius: 16px;
+        box-shadow: 2px 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .login-form-box,
+    .welcome-panel {
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+        border-radius: 0;
+        padding: 24px 10px;
+    }
+
+    .login-form-box {
+        padding-bottom: 0;
+    }
+
+    .welcome-panel {
+        border-radius: 0 0 16px 16px;
+        padding-top: 0;
+    }
+
+    .login-form-box h1,
+    .welcome-panel h1 {
+        font-size: 28px;
+    }
+
+    .input-group {
+        margin: 18px 0;
+    }
+
+    .login-btn {
+        height: 42px;
+        font-size: 15px;
+    }
+}
+
+
+/* Main APP CSS */
