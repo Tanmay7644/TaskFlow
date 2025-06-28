@@ -153,3 +153,126 @@ form {
 
 /* Main APP CSS */
 
+/* Reset and basics */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d8abc;
+  color: white;
+  padding: 15px 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.signout-button {
+  background: white;
+  color: #0d8abc;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Main content */
+.main-content {
+  padding: 20px;
+}
+
+.task-entry {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-entry input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.task-entry button {
+  padding: 10px 15px;
+  background-color: #0d8abc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Task columns */
+.task-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.column {
+  background: white;
+  flex: 1;
+  min-width: 280px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-list {
+  margin-top: 10px;
+}
+
+.task-card {
+  background: #eef6fa;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.05);
+}
+
+.task-card small {
+  display: block;
+  color: #555;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.task-actions {
+  margin-top: 8px;
+}
+
+.task-actions button {
+  margin-right: 5px;
+  padding: 5px 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: none;
+  background: #0d8abc;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .task-columns {
+    flex-direction: column;
+  }
+}

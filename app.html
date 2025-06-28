@@ -1,1 +1,41 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="user-info"> 
+            <img id="avatar" alt="User">
+            <span id="username"></span>
+        </div>
+        <button class="signout-button" onclick="signOut()">Sign Out</button>
+    </header>
+
+    <main class="main-content">
+        <div class="task-entry">
+            <input type="text"  id="task-input" placeholder="Enter a new task...">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <div class="column"> 
+            <h2>Todo (<span id="todoCount">0</span>)</h2>
+            <div id="todolist" class="task-list"></div>
+        </div>
+        <div class="column"> 
+            <h2>Completed (<span id="completedCount">0</span>)</h2>
+            <div id="completedlist" class="task-list"></div>
+        </div>
+        <div class="column"> 
+            <h2>Archived (<span id="archivedCount">0</span>)</h2>
+            <div id="archivedlist" class="task-list"></div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
