@@ -125,6 +125,7 @@ form {
 
 
 @media (max-width: 600px) {
+
     .login-container {
         flex-direction: column;
         width: 75vw;
@@ -132,6 +133,7 @@ form {
         /* min-height: 80vh; */
         border-radius: 16px;
         box-shadow: 2px 2px 12px rgba(0,0,0,0.15);
+        
     }
 
     .login-form-box,
@@ -165,6 +167,7 @@ form {
         margin-top: 8px;
         height: 42px;
         font-size: 15px;
+        margin-bottom: 10px;
     }
 }
 
