@@ -14,6 +14,7 @@ let tasks = JSON.parse(localStorage.getItem("taskflowTasks")) || {
 };
 
 let currentCategory = "todo";
+
 window.onload = () => {
   if (!localStorage.getItem("taskflowFetched")) {
     fetch("https://dummyjson.com/todos")
