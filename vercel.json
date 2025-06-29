@@ -1,0 +1,36 @@
+{
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/LandingPage.html"
+    },
+    {
+      "src": "/app",
+      "dest": "/app.html"
+    },
+    {
+      "src": "/app.html",
+      "dest": "/app.html"
+    },
+    {
+      "src": "/LandingPage.html",
+      "dest": "/LandingPage.html"
+    },
+    {
+      "src": "/script.js",
+      "dest": "/script.js"
+    },
+    {
+      "src": "/app.js",
+      "dest": "/app.js"
+    },
+    {
+      "src": "/style.css",
+      "dest": "/style.css"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
