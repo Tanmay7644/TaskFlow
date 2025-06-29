@@ -129,8 +129,7 @@ form {
     .login-container {
         flex-direction: column;
         width: 75vw;
-        height: 80vh;
-        /* min-height: 80vh; */
+        min-height: 80vh;
         border-radius: 16px;
         box-shadow: 2px 2px 12px rgba(0,0,0,0.15);
         
