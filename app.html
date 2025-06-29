@@ -21,18 +21,13 @@
             <input type="text"  id="task-input" placeholder="Enter a new task...">
             <button onclick="addTask()">Add Task</button>
         </div>
-
-        <div class="column"> 
-            <h2>Todo (<span id="todoCount">0</span>)</h2>
-            <div id="todolist" class="task-list"></div>
+        <div class="category-toggle">
+            <button id="show-todo" onclick="showCategory('todo')">Todo (<span id="todoCount">0</span>)</button>
+            <button id="show-completed" onclick="showCategory('completed')">Completed (<span id="completedCount">0</span>)</button>
+            <button id="show-archived" onclick="showCategory('archived')">Archived (<span id="archivedCount">0</span>)</button>
         </div>
-        <div class="column"> 
-            <h2>Completed (<span id="completedCount">0</span>)</h2>
-            <div id="completedlist" class="task-list"></div>
-        </div>
-        <div class="column"> 
-            <h2>Archived (<span id="archivedCount">0</span>)</h2>
-            <div id="archivedlist" class="task-list"></div>
+        <div class="single-list">
+            <div id="tasklist" class="task-list"></div>
         </div>
     </main>
 

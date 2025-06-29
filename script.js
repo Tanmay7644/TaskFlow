@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
   const nameInput = document.querySelector('input[type="text"]');
   const dobInput = document.querySelector('input[type="date"]');
-
+ 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (age < 10) {
-      alert("You must be older than 10 years to use TaskFlow.");
+      const e=document.getElementById("error");
+      e.textContent="You must be older than 10 years to use TaskFlow.";
       return;
     }
 

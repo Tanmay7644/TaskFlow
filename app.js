@@ -13,6 +13,7 @@ let tasks = JSON.parse(localStorage.getItem("taskflowTasks")) || {
   archived: []
 };
 
+let currentCategory = "todo";
 window.onload = () => {
   if (!localStorage.getItem("taskflowFetched")) {
     fetch("https://dummyjson.com/todos")
@@ -33,15 +34,26 @@ window.onload = () => {
         localStorage.setItem("taskflowFetched", "true");
         saveTasks();
         renderTasks();
+        showCategory(currentCategory);
       })
       .catch(err => {
         console.error("Failed to fetch todos:", err);
-        renderTasks(); // fallback
+        renderTasks();
+        showCategory(currentCategory);
       });
   } else {
     renderTasks();
+    showCategory(currentCategory);
   }
 };
+function showCategory(category) {
+  currentCategory = category;
+  renderTasks();
+  // Optionally, highlight the active button
+  document.getElementById("show-todo").classList.toggle("active", category === "todo");
+  document.getElementById("show-completed").classList.toggle("active", category === "completed");
+  document.getElementById("show-archived").classList.toggle("active", category === "archived");
+}
 
 function addTask() {
   const input = document.getElementById("task-input");
@@ -57,11 +69,15 @@ function addTask() {
 }
 
 function renderTasks() {
-  ["todo", "completed", "archived"].forEach(stage => {
-    const list = document.getElementById(stage + "list");
-    const count = document.getElementById(stage + "Count");
+
+    document.getElementById("todoCount").textContent = tasks.todo.length;
+    document.getElementById("completedCount").textContent = tasks.completed.length;
+    document.getElementById("archivedCount").textContent = tasks.archived.length;
+
+    const list = document.getElementById("tasklist");
+    // const count = document.getElementById(stage + "Count");
     list.innerHTML = "";
-    tasks[stage].forEach((task, index) => {
+    tasks[currentCategory].forEach((task, index) => {
       const card = document.createElement("div");
       card.className = "task-card";
       card.innerHTML = `
@@ -70,21 +86,19 @@ function renderTasks() {
       `;
       const actions = document.createElement("div");
       actions.className = "task-actions";
-      if (stage === "todo") {
+      if (currentCategory === "todo") {
         actions.appendChild(createBtn("Mark Completed", () => moveTask("todo", "completed", index)));
         actions.appendChild(createBtn("Archive", () => moveTask("todo", "archived", index)));
-      } else if (stage === "completed") {
+      } else if (currentCategory === "completed") {
         actions.appendChild(createBtn("Move to Todo", () => moveTask("completed", "todo", index)));
         actions.appendChild(createBtn("Archive", () => moveTask("completed", "archived", index)));
-      } else if (stage === "archived") {
+      } else if (currentCategory === "archived") {
         actions.appendChild(createBtn("Move to Todo", () => moveTask("archived", "todo", index)));
         actions.appendChild(createBtn("Move to Completed", () => moveTask("archived", "completed", index)));
       }
       card.appendChild(actions);
       list.appendChild(card);
     });
-    count.textContent = tasks[stage].length;
-  });
 }
 
 function createBtn(label, onclick) {
@@ -109,5 +123,5 @@ function saveTasks() {
 
 function signOut() {
   localStorage.clear();
-  location.href = "LandingPage.html";
+  window.location.href = "LandingPage.html";
 }
